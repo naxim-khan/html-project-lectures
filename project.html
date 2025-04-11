@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Digital Diary of a Rebel" />
+    <title>Digital Diary of a Rebel</title>
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0px;
+        }
+        main{
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            margin-top: 100px;
+        }
+
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        header,
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        td,
+        th {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .quote {
+            background: #eee;
+            padding: 10px;
+            border-left: 5px solid #555;
+        }
+    </style>
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <h1>Digital Diary of a Rebel</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#timeline">Timeline</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- about -->
+        <section id="about">
+            <h2>👤 About Me</h2>
+            <p>My name is <strong>Nazeem Khan</strong>. I walk my own path. <em>No rules, no boundaries.</em></p>
+            <p class="quote"><q>The ones who are crazy enough to think they can change the world, are the ones who
+                    do.</q></p>
+            <p>This page uses <abbr title="HyperText Markup Language">HTML</abbr> for structure.</p>
+            <blockquote cite="https://example.com">
+                “Rebellion is the seed of evolution.”
+            </blockquote>
+        </section>
+
+        <!-- timeline -->
+        <section id="timeline">
+            <h2>🕒 My Timeline</h2>
+            <ul>
+                <li><time datetime="2010-05-01">2010</time>: Discovered coding.</li>
+                <li><time datetime="2020-01-15">2020</time>: Built my first web app.</li>
+                <li><time datetime="2025-04-11">2025</time>: Teaching and inspiring rebels.</li>
+            </ul>
+        </section>
+
+        <!-- gallery -->
+        <section id="gallery">
+            <h2>📸 Gallery</h2>
+            <figure>
+                <img src="https://via.placeholder.com/300x200" alt="Rebel Mode" />
+                <figcaption>The Rebel in action.</figcaption>
+            </figure>
+            <figure>
+                <img src="https://via.placeholder.com/300x200" alt="Coding Setup" />
+                <figcaption>My coding cave.</figcaption>
+            </figure>
+        </section>
+
+        <!-- achievements -->
+        <section>
+            <h2>📊 Achievements</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Milestone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2020</td>
+                        <td>Launched First Product</td>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td>Freelanced Globally</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>📻 Multimedia</h2>
+            <audio controls>
+                <source src="audio.mp3" type="audio/mpeg" />
+                Your browser does not support the audio element.
+            </audio>
+            <video width="320" height="240" controls>
+                <source src="video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <section id="contact">
+            <h2>📝 Feedback Form</h2>
+            <form >
+                <fieldset >
+                    <legend>Contact Me</legend>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" /><br><br>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" /><br><br>
+
+                    <label for="type">Type of Message:</label>
+                    <select id="type" name="type">
+                        <option value="feedback">Feedback</option>
+                        <option value="collab">Collaboration</option>
+                    </select><br><br>
+
+                    <label for="msg">Message:</label><br>
+                    <textarea id="msg" name="msg" rows="4" cols="50">Write your message here...</textarea><br><br>
+
+                    <input type="submit" value="Send" />
+                </fieldset>
+            </form>
+        </section>
+
+        <section>
+            <h2>💡 Extras</h2>
+            <details>
+                <summary>What’s the rebel’s secret?</summary>
+                <p>I just don’t care what others think.</p>
+            </details>
+            <p><mark>This sentence is marked</mark> for importance.</p>
+            <p><del>This line was a mistake.</del> <ins>This is the corrected one.</ins></p>
+            <pre><code>
+    function rebelMode() {
+      console.log("No rules, just code.");
+    }
+        </code></pre>
+            <p>Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to save.</p>
+        </section>
+
+        <section>
+            <h2>🔗 Embeds</h2>
+            <iframe src="https://example.com" width="300" height="200" title="Example Iframe"></iframe><br><br>
+            <object data="file.pdf" type="application/pdf" width="300" height="200">PDF Preview</object><br><br>
+            <embed src="file.swf" width="300" height="200" />
+            <canvas width="200" height="100" style="border:1px solid #000000;">
+                Your browser does not support the HTML canvas tag.
+            </canvas>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+            </svg>
+        </section>
+    </main>
+
+    <footer>
+        <address>
+            Written by Nazeem Khan<br>
+            Visit us at: <a href="https://nazeem-khan-portfolio.vercel.app">Portfolio</a><br>
+            Islamabad, Pakistan
+        </address>
+        <small>&copy; 2025 All rights reserved.</small>
+    </footer>
+
+</body>
+</html>
