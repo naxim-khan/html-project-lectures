@@ -6,22 +6,24 @@
     <meta name="description" content="Digital Diary of a Rebel" />
     <title>Digital Diary of a Rebel</title>
     <style>
-        html{
+        html {
             scroll-behavior: smooth;
         }
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f9f9f9;
             margin: 0px;
         }
-        main{
+
+        main {
             padding: 20px;
-            max-width: 800px;
+            max-width: 1000px;
             margin: auto;
             margin-top: 100px;
         }
 
-        header{
+        header {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -32,9 +34,11 @@
             z-index: 50;
             padding-left: 10px;
             padding-right: 10px;
+            background-color: #333;
+            color: white;
+            text-align: center;
         }
 
-        header,
         footer {
             background-color: #333;
             color: white;
@@ -70,9 +74,111 @@
             padding: 10px;
             border-left: 5px solid #555;
         }
+
+        #bg-video {
+            opacity: 0.5;
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        section {
+            padding: 30px !important;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        input,
+        select,
+        textarea {
+            width: 50%;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .about-container {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border: 1px solid #000;
+            border-top-right-radius: 25px;
+            border-bottom-left-radius: 25px;
+            overflow: hidden;
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .figure-box {
+            flex: 1 1 300px;
+            max-width: 350px;
+            text-align: center;
+        }
+
+        .figure-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .video-box {
+            width: 100%;
+            height: 340px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .audio-box {
+            width: 100%;
+            background-color: #111;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .styled-audio {
+            width: 100%;
+            height: 40px;
+            border-radius: 8px;
+            background-color: #222;
+        }
     </style>
 </head>
 <body>
+    <!-- background -->
+    <video autoplay muted loop id="bg-video">
+        <source src="./media/got-trailer-trim.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
     <!-- header -->
     <header>
         <h1>Digital Diary of a Rebel</h1>
@@ -87,10 +193,17 @@
     <main>
         <!-- about -->
         <section id="about">
-            <h2>👤 About Me</h2>
-            <p>My name is <strong>Nazeem Khan</strong>. I walk my own path. <em>No rules, no boundaries.</em></p>
-            <p class="quote"><q>The ones who are crazy enough to think they can change the world, are the ones who
-                    do.</q></p>
+            <div class="about-container">
+                <div class="profile-pic">
+                    <img src="./images/jhon-snow.jpeg" alt="John Snow" />
+                </div>
+                <div>
+                    <h2> About Me</h2>
+                    <p>My name is <strong>Nazeem Khan</strong>. <br> I walk my own path. <em>No rules, no boundaries.</em></p>
+                </div>
+            </div>
+            <hr>
+            <p class="quote"><q>The ones who are crazy enough to think they can change the world, are the ones who do.</q></p>
             <p>This page uses <abbr title="HyperText Markup Language">HTML</abbr> for structure.</p>
             <blockquote cite="https://example.com">
                 “Rebellion is the seed of evolution.”
@@ -110,14 +223,17 @@
         <!-- gallery -->
         <section id="gallery">
             <h2>📸 Gallery</h2>
-            <figure>
-                <img src="https://via.placeholder.com/300x200" alt="Rebel Mode" />
-                <figcaption>The Rebel in action.</figcaption>
-            </figure>
-            <figure>
-                <img src="https://via.placeholder.com/300x200" alt="Coding Setup" />
-                <figcaption>My coding cave.</figcaption>
-            </figure>
+            <div class="gallery-container">
+                <figure class="figure-box">
+                    <img src="./images/jhon-snow.jpeg" alt="Rebel Mode" class="figure-img" />
+                    <figcaption style="margin-top: 8px;">The Rebel in action.</figcaption>
+                </figure>
+
+                <figure class="figure-box">
+                    <img src="./images/coding-setup.jpeg" alt="Coding Setup" class="figure-img" />
+                    <figcaption style="margin-top: 8px;">My coding cave.</figcaption>
+                </figure>
+            </div>
         </section>
 
         <!-- achievements -->
@@ -143,30 +259,37 @@
             </table>
         </section>
 
-        <section>
+        <!-- multimedia -->
+        <section style="display: flex; flex-direction: column;">
             <h2>📻 Multimedia</h2>
-            <audio controls>
-                <source src="audio.mp3" type="audio/mpeg" />
-                Your browser does not support the audio element.
-            </audio>
-            <video width="320" height="240" controls>
-                <source src="video.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
+            <div class="video-box">
+                <video width="100%" height="340" muted autoplay loop style="display: block;">
+                    <source src="./media/got-trailer-trim.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="audio-box">
+                <audio id="myAudio" controls autoplay loop class="styled-audio">
+                    <source src="./media/got-theme-song.mp3" type="audio/mpeg" />
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
         </section>
 
+        <!-- contact -->
         <section id="contact">
             <h2>📝 Feedback Form</h2>
-            <form >
-                <fieldset >
+            <form>
+                <fieldset>
                     <legend>Contact Me</legend>
-                    <label for="name">Name:</label>
+                    <label for="name">Name:</label> <br>
                     <input type="text" id="name" name="name" placeholder="Your Name" /><br><br>
 
-                    <label for="email">Email:</label>
+                    <label for="email">Email:</label> <br>
                     <input type="email" id="email" name="email" placeholder="you@example.com" /><br><br>
 
-                    <label for="type">Type of Message:</label>
+                    <label for="type">Type of Message:</label><br>
                     <select id="type" name="type">
                         <option value="feedback">Feedback</option>
                         <option value="collab">Collaboration</option>
@@ -180,6 +303,7 @@
             </form>
         </section>
 
+        <!-- extras -->
         <section>
             <h2>💡 Extras</h2>
             <details>
@@ -189,16 +313,18 @@
             <p><mark>This sentence is marked</mark> for importance.</p>
             <p><del>This line was a mistake.</del> <ins>This is the corrected one.</ins></p>
             <pre><code>
-    function rebelMode() {
-      console.log("No rules, just code.");
-    }
-        </code></pre>
+  function rebelMode() {
+    console.log("No rules, just code.");
+  }
+            </code></pre>
             <p>Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to save.</p>
         </section>
 
+        <!-- links -->
         <section>
-            <h2>🔗 Embeds</h2>
-            <iframe src="https://example.com" width="300" height="200" title="Example Iframe"></iframe><br><br>
+            <h2>🔗 My Site</h2>
+            <iframe src="https://nazeem-khan-portfolio.vercel.app/" width="100%" height="800px"
+                title="Nazeem Portfolio site" style="border-radius: 10px;"></iframe><br><br>
             <object data="file.pdf" type="application/pdf" width="300" height="200">PDF Preview</object><br><br>
             <embed src="file.swf" width="300" height="200" />
             <canvas width="200" height="100" style="border:1px solid #000000;">
@@ -219,5 +345,11 @@
         <small>&copy; 2025 All rights reserved.</small>
     </footer>
 
+    <script>
+        window.onload = function () {
+            const audio = document.getElementById("myAudio");
+            audio.volume = 0.1;
+        };
+    </script>
 </body>
 </html>
